@@ -6,7 +6,7 @@ class database {
     private $host = "localhost";
     private $db_name = "webtechw10";
     private $username = "root";
-    private $password = "";
+    private $password = "afikah";
     public $conn;
 
     // Get the database connection
@@ -25,21 +25,21 @@ class database {
     // Create table
     public function createTable() {
         $sql = "CREATE TABLE IF NOT EXISTS MOVIE (
-            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-            title VARCHAR(150) NOT NULL,
-            type VARCHAR(150) NOT NULL,
-            description VARCHAR(300) NOT NULL,
-            release_year INT(4) NULL,
-            age_certification VARCHAR(30) NULL,
-            runtime INT(3) NULL,
-            genres VARCHAR(30) NULL,
-            production_countries VARCHAR(30) NULL,
-            seasons VARCHAR(50) NULL,
-            imdb_id VARCHAR(30) NULL,
-            imdb_scores FLOAT() NULL,
-            imdb_votes VARCHAR(30) NULL,
-            tmdb_popularity VARCHAR(30) NULL,
-            tmdb_score VARCHAR(30) NULL,           
+        id VARCHAR(30) PRIMARY KEY NOT NULL,
+        title VARCHAR(255) ,
+        type VARCHAR(30) ,
+        description TEXT ,
+        release_year INT ,
+        age_certification VARCHAR(10) ,
+        runtime INT ,
+        genres VARCHAR(255) ,
+        production_countries VARCHAR(255) ,
+        seasons VARCHAR(10),
+        imdb_id VARCHAR(30) ,
+        imdb_score FLOAT ,
+        imdb_votes INT ,
+        tmdb_popularity FLOAT ,
+        tmdb_score FLOAT 
         )";
         
         $stmt = $this->connection()->prepare($sql);
